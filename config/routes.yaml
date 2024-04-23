@@ -1,0 +1,9 @@
+app.rest.create_product.page:
+    path: /products
+    methods: POST
+    controller: 'App\SuDespacho\Infrastructure\Rest\Product\CreateProductPage'
+
+app.rest.retrieve_products.page:
+    path: /products
+    methods: GET
+    controller: 'App\SuDespacho\Infrastructure\Rest\Product\RetrieveProductsPage'

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.1/phpunit.xsd"
+    backupGlobals="false"
+    beStrictAboutTestsThatDoNotTestAnything="true"
+    colors="true"
+    failOnRisky="true"
+    processIsolation="false"
+    stopOnFailure="false"
+    bootstrap="tests/bootstrap.php"
+    cacheDirectory=".phpunit.cache"
+    backupStaticProperties="false"
+>
+  <php>
+    <env name="SYMFONY_DEPRECATIONS_HELPER" value="max[direct]=0"/>
+    <env name="COMPOSER_TEST_SUITE" value="1"/>
+    <env name="APP_DEBUG" value="false" />
+    <env name="APP_ENV" value="test" force="true"/>
+  </php>
+
+  <testsuites>
+    <testsuite name="Composer Test Suite">
+      <directory>./tests</directory>
+    </testsuite>
+  </testsuites>
+  <groups>
+    <exclude>
+      <group>slow</group>
+      <group>legacy</group>
+    </exclude>
+  </groups>
+  <source>
+    <include>
+      <directory>./src</directory>
+    </include>
+    <exclude>
+        <directory>./src/SuDespacho/Infrastructure</directory>
+        <file>./src/Kernel.php</file>
+        <directory>./src/Shared/Infrastructure</directory>
+    </exclude>
+  </source>
+</phpunit>
