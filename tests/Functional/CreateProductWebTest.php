@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class CreateProductWebTest extends WebTestCase
 {
-    const string BEARER_TOKEN = 'Bearer admintoken';
+    public const string BEARER_TOKEN = 'Bearer admintoken';
 
     public function testCreateProductWithoutAuthMustUnauthorized(): void
     {

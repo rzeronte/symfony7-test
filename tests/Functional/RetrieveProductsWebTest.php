@@ -7,7 +7,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class RetrieveProductsWebTest extends WebTestCase
 {
-
     public function testRetrieveProductsWithEmptyDatabaseMustReturnOk(): void
     {
         $client = static::createClient();
@@ -17,11 +16,11 @@ class RetrieveProductsWebTest extends WebTestCase
 
         $this->assertEquals(json_encode([
             'data' => [],
-            "page" => 1,
-            "numResults" => 0,
-            "numPages" => 0,
-            "limit" => 10
-        ]),  $client->getResponse()->getContent());
+            'page' => 1,
+            'numResults' => 0,
+            'numPages' => 0,
+            'limit' => 10,
+        ]), $client->getResponse()->getContent());
     }
 
     public function tearDown(): void
