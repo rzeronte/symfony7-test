@@ -2,7 +2,3 @@ services:
     _defaults:
         autowire: true
         autoconfigure: true
-
-    App\SuDespacho\Domain\Product\Repository\ProductRepository:
-        class: App\SuDespacho\Infrastructure\InMemory\InMemoryProductRepository
-        public: true

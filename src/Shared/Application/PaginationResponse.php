@@ -24,7 +24,7 @@ class PaginationResponse implements \JsonSerializable
     /**
      * @return array<Product> $products
      */
-    protected function results(): array
+    public function results(): array
     {
         return $this->results;
     }
