@@ -74,3 +74,10 @@ php-cs-fixer: ## Run PHP-CS-Fixer
 
 phpstan: ## Run PHPStan analysis
 	@$(DOCKER_COMP) exec -e php php ./vendor/bin/phpstan
+
+reset-app: ## Reset the application: drop and recreate database, run tests, generate coverage, fix PHP code style, and run PHPStan
+	make reset-db
+	make test
+	make coverage
+	make php-cs-fixer
+	make phpstan
